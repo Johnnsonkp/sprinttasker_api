@@ -1,8 +1,11 @@
 class TasksController < ApplicationController
+    before_action :authorized
     before_action :set_task, only: [:show, :update, :destroy]
 
     def index 
-        @tasks = Task.all 
+        @tasks = Task.where(user_id: @user.id)
+
+        # @tasks = Task.all 
         render json: @tasks
     end 
 
@@ -24,8 +27,10 @@ class TasksController < ApplicationController
 
     def create 
         @task = Task.new(task_params)
+        @task.user_id = @user.id
+
         if @task.save 
-            render json: @task 
+            render json: @task, status: :created, location: @task
         else 
             render json: @task.errors, status: :unprocessable_entity
         end
