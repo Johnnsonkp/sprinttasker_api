@@ -8,7 +8,13 @@
 
 # task = Task.create(name:"seeds 1",completed:false)
 
-user = User.create(name: "testname", username: "testusername", password: "testpassword", email: "test@gmail.com")
+user = User.create([{name: "new name", username: "new username", password: "new", email: "new@gmail.com"}, {name: "new 2 name", username: "new 2 username", password: "new2", email: "new2@gmail.com"}])
+Task.create(name:"new name task",completed:false, user: user.first)
 
 
 # eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.oT7kSePnYs7eVIsRIzIi0UEC7XBclsrO3qrnXwic8Zg
+
+
+
+bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.oT7kSePnYs7eVIsRIzIi0UEC7XBclsrO3qrnXwic8Zg 
+Authorization
