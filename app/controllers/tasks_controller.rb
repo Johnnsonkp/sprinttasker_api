@@ -13,6 +13,12 @@ class TasksController < ApplicationController
         render json: @task 
     end 
 
+    def usertask
+        
+        @task = UserTask.all
+        render json: @task 
+    end 
+
     def update 
         if @task.update(task_params)
             render json: @task
@@ -42,7 +48,7 @@ class TasksController < ApplicationController
         end
 
         def task_params 
-            params.require(:task).permit(:id, :name, :completed)
+            params.require(:task).permit(:id, :name, :completed, :description )
             # params.permit(:task)
             # params.fetch(:task, {}).permit(:id, :name, :completed)
         end
