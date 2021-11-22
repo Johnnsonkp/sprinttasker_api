@@ -11,16 +11,16 @@
 # user = User.create([{name: "new name", username: "new username", password: "new", email: "new@gmail.com"}, {name: "new 2 name", username: "new 2 username", password: "new2", email: "new2@gmail.com"}])
 # Task.create(name:"new name task",completed:false, user: user.first)
 
-# N = User.create!( 
-#     name: 'Yes its a test mate',
-#     username: 'SeedsUser username',
-#     email: 'SeedsUser@gmail.com',
-#     password: 'new' 
-# )
-# Task.create!(
-#     user_id: N.id,
-#     name:"This is anotjer test",
-#     description: "Hello I am a task description",
-#     completed:false,
-# )
+N = User.create!( 
+    name: 'John Test',
+    username: 'johntest',
+    email: 'johntest@gmail.com',
+    password: '0000' 
+)
+Task.create!(
+    user_id: N.id,
+    name:"Deploy rails API to heroku",
+    description: "Deploy rails API to heroku",
+    completed:false
+)
 ########
