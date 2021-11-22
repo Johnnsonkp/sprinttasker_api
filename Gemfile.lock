@@ -148,7 +148,7 @@ GEM
     zeitwerk (2.5.1)
 
 PLATFORMS
-  x86_64-darwin-19
+  ruby
   x86_64-linux-z
 
 DEPENDENCIES
