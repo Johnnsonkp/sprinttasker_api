@@ -4,8 +4,9 @@ class NotesController < ApplicationController
 
   # GET /notes
   def index
-    @notes = Note.where user: @user.id
+    # @notes = Note.where user: @user.id
 
+    @tasks = Note.all
     render json: @notes
   end
 
@@ -17,7 +18,8 @@ class NotesController < ApplicationController
   # POST /notes
   def create
     @note = Note.new(note_params)
-    @note.user = @user
+    # @note.user = @user
+    @note.user_id = @user.id
 
     if @note.save
       render json: @note, status: :created, location: @note
