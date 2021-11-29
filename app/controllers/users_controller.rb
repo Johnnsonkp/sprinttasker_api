@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
     before_action :authorized, only: [:auto_login]
+    before_action :set_current_user
 
   # REGISTER
   def create
@@ -34,5 +35,8 @@ class UsersController < ApplicationController
 
   def user_params
     params.permit(:name, :username, :password, :email)
+  end
+  def set_current_user
+    Current.user = current_user
   end
 end
