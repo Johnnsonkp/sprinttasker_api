@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
     # before_action :authorized
+    before_action :set_current_user
     before_action :set_task, only: [:show, :update, :destroy]
 
     def index 
@@ -43,6 +44,10 @@ class TasksController < ApplicationController
     end 
 
     private 
+        def set_current_user
+          Current.user = current_user
+        end
+
         def set_task
             @task = Task.find(params[:id])
         end
