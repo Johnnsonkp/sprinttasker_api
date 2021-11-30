@@ -3,9 +3,9 @@ class TasksController < ApplicationController
     before_action :set_task, only: [:show, :update, :destroy]
 
     def index 
-        # @tasks = Task.where(user_id: @user.id)
+        @tasks = Task.where(user_id: @user.id)
         # @task = Task.filter(task => task.user_id)
-        @task = Task.where(user_id: Current.user)
+        # @task = Task.where(user_id: Current.user)
 
         # @tasks = Task.all 
         render json: @tasks
