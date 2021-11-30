@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :notes
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   # resources :tasks 
 
@@ -8,7 +7,7 @@ Rails.application.routes.draw do
   get "/auto_login", to: "users#auto_login"
 
   resources :user_task
-  
+  resources :notes
   resources :tasks
 
 end
