@@ -6,7 +6,7 @@ class NotesController < ApplicationController
   def index
     # @notes = Note.where user: @user.id
 
-    @tasks = Note.all
+    @notes = Note.all
     render json: @notes
   end
 
