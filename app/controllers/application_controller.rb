@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::API
   before_action :authorized
+  before_action :set_current_user
 
   def encode_token(payload)
     JWT.encode(payload, 'yourSecret')
@@ -36,5 +37,11 @@ class ApplicationController < ActionController::API
   def authorized
     # render json: { message: 'Please log in' }, status: :unauthorized unless logged_in?
     render json: {message: 'You need to log in'}, status: :unauthorized unless logged_in?
+  end
+
+  def set_current_user
+    if session[:user_id]
+      Current.user = User.find_by(id: session[:user_id])
+    end 
   end
 end
