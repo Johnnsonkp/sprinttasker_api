@@ -1,12 +1,13 @@
 class NotesController < ApplicationController
-  before_action :set_note, only: [:show, :update, :destroy]
   before_action :authorized
+  before_action :set_note, only: [:show, :update, :destroy]
+ 
 
   # GET /notes
   def index
-    # @notes = Note.where user: @user.id
+    @notes = Note.where(user: @user.id)
 
-    @notes = Note.all
+    # @notes = Note.all
     render json: @notes
   end
 
