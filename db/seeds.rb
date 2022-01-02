@@ -12,25 +12,26 @@
 # Task.create(name:"new name task",completed:false, user: user.first)
 
 N = User.create!( 
-    id: 1003,
+    id: 1005,
     name: 'John Test',
     username: 'johntest',
     email: 'johntest@gmail.com',
     password: '0000' 
 )
 T = Task.create!(
-    id: 1004,
+    id: 1008,
     user_id: N.id,
     name:"Deploy rails API to heroku",
     description: "Deploy rails API to heroku",
+    subtask: "this is a subtask",
     completed: false
 )
-Subtask.create!(
-    id: 1005,
-    task_id: T.id,
-    name:"Deploy rails API to heroku",
-    description: "Deploy rails API to heroku"
-)
+# Subtask.create!(
+#     id: 1005,
+#     task_id: T.id,
+#     name:"Deploy rails API to heroku",
+#     description: "Deploy rails API to heroku"
+# )
 
 
 # Subtask(id: integer, name: string, description: text, task_id: integer)
