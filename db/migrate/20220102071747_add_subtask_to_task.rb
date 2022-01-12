@@ -3,6 +3,6 @@ class AddSubtaskToTask < ActiveRecord::Migration[6.1]
   #   add_reference :tasks, :subtask, foreign_key: true
   # end
   def change
-    add_column :tasks, :subtask, :string
+    add_column :tasks, :subtask, :string, :default => "00:00"
   end
 end
