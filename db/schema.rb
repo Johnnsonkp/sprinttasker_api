@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_21_163706) do
+ActiveRecord::Schema.define(version: 2022_02_21_174317) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,8 @@ ActiveRecord::Schema.define(version: 2022_02_21_163706) do
     t.string "time_to_complete"
     t.string "subtask", array: true
     t.integer "order"
+    t.string "reward"
+    t.string "subitems", default: [], array: true
     t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 
