@@ -50,7 +50,7 @@ class TasksController < ApplicationController
         end
 
         def task_params 
-            params.require(:task).permit(:id, :name, :completed, :description, :subtask, :timer, :time_to_complete, :order )
+            params.require(:task).permit(:id, :name, :completed, :description, :subtask, :timer, :time_to_complete, :order, :subitems )
             # params.permit(:task)
             # params.fetch(:task, {}).permit(:id, :name, :completed)
         end
