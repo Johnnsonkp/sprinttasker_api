@@ -10,7 +10,7 @@ class CreateSprints < ActiveRecord::Migration[6.1]
       t.integer :days
       t.text :stand_up_notes, array: true, default: []
       t.boolean :completed
-      t.references :tasks, null: true, foreign_key: true
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end
