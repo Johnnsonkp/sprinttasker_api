@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   resources :user_task
   resources :notes
   resources :tasks
+  resources :sprints
 
 end
