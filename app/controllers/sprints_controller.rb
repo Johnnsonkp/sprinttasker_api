@@ -13,7 +13,7 @@ class SprintsController < ApplicationController
   
     # GET /notes/1
     def show
-      render json: @Sprint
+      render json: @sprint
     end
   
     # POST /notes
