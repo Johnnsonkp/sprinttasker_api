@@ -35,9 +35,10 @@ ActiveRecord::Schema.define(version: 2022_02_23_100904) do
     t.text "stand_up_notes", default: [], array: true
     t.boolean "completed"
     t.bigint "tasks_id"
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["tasks_id"], name: "index_sprints_on_tasks_id"
+    t.index ["user_id"], name: "index_sprints_on_user_id"
   end
 
   create_table "subtasks", force: :cascade do |t|
