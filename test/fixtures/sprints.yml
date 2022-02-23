@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  objective: MyText
+  notes: MyText
+  start_date: 2022-02-23
+  end_date: 2022-02-23
+  stand_up: false
+  days: 1
+  stand_up_notes: MyText
+  completed: false
+  tasks: one
+
+two:
+  name: MyString
+  objective: MyText
+  notes: MyText
+  start_date: 2022-02-23
+  end_date: 2022-02-23
+  stand_up: false
+  days: 1
+  stand_up_notes: MyText
+  completed: false
+  tasks: two
